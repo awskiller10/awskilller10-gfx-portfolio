@@ -1,47 +1,51 @@
-/**
- * Style.css
- * Main stylesheet for the project.
- */
+:root {
+    --primary-color: #f0f0f0;
+    --secondary-color: #0078d4;
+    --font-family: 'Arial', sans-serif;
+}
 
 body {
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
+    color: var(--secondary-color);
+    background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(240,240,240,0.8));
+    backdrop-filter: blur(10px);
 }
 
-h1, h2, h3 {
-    color: #333;
+/* Glassmorphism effect */
+.glass {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
+/* Animation example */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+.fade-in {
+    animation: fadeIn 1s ease-in;
 }
 
-.footer {
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    .glass {
+        padding: 20px;
+    }
 }
 
-.button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #218838;
+@media (min-width: 769px) {
+    body {
+        padding: 30px;
+    }
+    .glass {
+        padding: 40px;
+    }
 }
